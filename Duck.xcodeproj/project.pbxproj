@@ -45,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		463F9CE52BC050650014A761 /* Quack_Attack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Quack_Attack.mp3; sourceTree = "<group>"; };
+		463F9CE62BC050680014A761 /* QuackCharacterSelect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = QuackCharacterSelect.mp3; sourceTree = "<group>"; };
 		4672293B2BBAFF8600D53F6E /* SelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
 		468E62C52BAC8D1F004E9638 /* Duck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Duck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		468E62C82BAC8D1F004E9638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,10 +95,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		463F9CE32BC049DD0014A761 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				468E62FD2BAC8DA8004E9638 /* CustomButton.swift */,
+				4672293B2BBAFF8600D53F6E /* SelectButton.swift */,
+				468E63032BAC9547004E9638 /* CustomBackButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		463F9CE42BC0505F0014A761 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				463F9CE52BC050650014A761 /* Quack_Attack.mp3 */,
+				463F9CE62BC050680014A761 /* QuackCharacterSelect.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		463F9CE82BC050840014A761 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				468E62CA2BAC8D1F004E9638 /* GameScene.sks */,
+				468E62FB2BAC8D6A004E9638 /* GameScene2.sks */,
+				468E62CC2BAC8D1F004E9638 /* Actions.sks */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		463F9CE92BC0509E0014A761 /* Programatical Files */ = {
+			isa = PBXGroup;
+			children = (
+				468E62D02BAC8D1F004E9638 /* GameViewController.swift */,
+				468E62CE2BAC8D1F004E9638 /* GameScene.swift */,
+				468E62FF2BAC8DD7004E9638 /* GameScene2.swift */,
+			);
+			path = "Programatical Files";
+			sourceTree = "<group>";
+		};
+		463F9CEA2BC050BE0014A761 /* (NEVER MODIFY) */ = {
+			isa = PBXGroup;
+			children = (
+				468E62D22BAC8D1F004E9638 /* Main.storyboard */,
+				468E62D72BAC8D21004E9638 /* LaunchScreen.storyboard */,
+			);
+			path = "(NEVER MODIFY)";
+			sourceTree = "<group>";
+		};
 		468E62BC2BAC8D1E004E9638 = {
 			isa = PBXGroup;
 			children = (
-				4672293B2BBAFF8600D53F6E /* SelectButton.swift */,
 				468E62C72BAC8D1F004E9638 /* Duck */,
 				468E62E12BAC8D22004E9638 /* DuckTests */,
 				468E62EB2BAC8D22004E9638 /* DuckUITests */,
@@ -117,20 +166,15 @@
 		468E62C72BAC8D1F004E9638 /* Duck */ = {
 			isa = PBXGroup;
 			children = (
+				463F9CEA2BC050BE0014A761 /* (NEVER MODIFY) */,
+				463F9CE92BC0509E0014A761 /* Programatical Files */,
+				463F9CE82BC050840014A761 /* Scenes */,
+				463F9CE42BC0505F0014A761 /* Sounds */,
+				463F9CE32BC049DD0014A761 /* Buttons */,
 				468E63012BAC8E4C004E9638 /* Quack_Attack.mp3 */,
 				468E63052BACA570004E9638 /* QuackCharacterSelect.mp3 */,
 				468E62C82BAC8D1F004E9638 /* AppDelegate.swift */,
-				468E62CA2BAC8D1F004E9638 /* GameScene.sks */,
-				468E62CC2BAC8D1F004E9638 /* Actions.sks */,
-				468E62CE2BAC8D1F004E9638 /* GameScene.swift */,
-				468E63032BAC9547004E9638 /* CustomBackButton.swift */,
-				468E62FB2BAC8D6A004E9638 /* GameScene2.sks */,
-				468E62D02BAC8D1F004E9638 /* GameViewController.swift */,
-				468E62D22BAC8D1F004E9638 /* Main.storyboard */,
 				468E62D52BAC8D21004E9638 /* Assets.xcassets */,
-				468E62FD2BAC8DA8004E9638 /* CustomButton.swift */,
-				468E62FF2BAC8DD7004E9638 /* GameScene2.swift */,
-				468E62D72BAC8D21004E9638 /* LaunchScreen.storyboard */,
 			);
 			path = Duck;
 			sourceTree = "<group>";
