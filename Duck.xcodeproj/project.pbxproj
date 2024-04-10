@@ -65,9 +65,9 @@
 		468E62FB2BAC8D6A004E9638 /* GameScene2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene2.sks; sourceTree = "<group>"; };
 		468E62FD2BAC8DA8004E9638 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		468E62FF2BAC8DD7004E9638 /* GameScene2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene2.swift; sourceTree = "<group>"; };
-		468E63012BAC8E4C004E9638 /* Quack_Attack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Quack_Attack.mp3; path = ../../../../.Trash/Quack_Attack.mp3; sourceTree = "<group>"; };
+		468E63012BAC8E4C004E9638 /* Quack_Attack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Quack_Attack.mp3; path = ../../../Downloads/Quack_Attack.mp3; sourceTree = "<group>"; };
 		468E63032BAC9547004E9638 /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
-		468E63052BACA570004E9638 /* QuackCharacterSelect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = QuackCharacterSelect.mp3; path = ../../../../Downloads/QuackCharacterSelect.mp3; sourceTree = "<group>"; };
+		468E63052BACA570004E9638 /* QuackCharacterSelect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = QuackCharacterSelect.mp3; path = ../../../Downloads/QuackCharacterSelect.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
