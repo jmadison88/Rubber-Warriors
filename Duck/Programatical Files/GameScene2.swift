@@ -51,21 +51,18 @@ class GameScene2: SKScene {
     func createDuck(texture: SKTexture, position: CGPoint) -> SKSpriteNode {
         let duck = SKSpriteNode(texture: texture, size: CGSize(width: 60, height: 40))
         duck.position = position
-        duck.size = CGSize(width: 250.0, height: 250.0)
+        duck.size = CGSize(width: 50.0, height: 50.0)
         addChild(duck)
+        
+        let scaleForward = SKAction.scale(to: 6, duration: 0.3)
+        let scaleBackward2 = SKAction.scale(to: 5, duration: 0.2)
+        let scaleSequence = SKAction.sequence([scaleForward, scaleBackward2])
+        duck.run(scaleSequence)
         return duck
     }
     
     func createButtons() {
-        let normalTexture = SKTexture(imageNamed: "backButton")
-                let selectedTexture = SKTexture(imageNamed: "backButtonSelected")
-                let customButton = CustomBackButton(defaultTexture: normalTexture, selectedTexture: selectedTexture, size: CGSize(width: 250, height: 250))
-                customButton.position = CGPoint(x: frame.midX - 200, y: frame.midY + 900)
-                customButton.zPosition = -1
-                addChild(customButton)
-                let moveDown = SKAction.moveTo(y: frame.midY + 575, duration: 0.5)
-                customButton.run(moveDown)
-        
+
         
         let arrowSize = CGSize(width: 300, height: 300) // Increase size
         
@@ -82,7 +79,31 @@ class GameScene2: SKScene {
         selectionArrowRight.position = CGPoint(x: frame.midX + 150, y: frame.midY)
         selectionArrowRight.size = arrowSize
         selectionArrowRight.xScale = -1
+        selectionArrowRight.yScale = -1
         addChild(selectionArrowRight)
+        
+        let normalTexture = SKTexture(imageNamed: "SelectButton")
+        let selectedTexture = SKTexture(imageNamed: "SelectButtonSelected")
+        let selectButton = SelectButton(defaultTexture: normalTexture, selectedTexture: selectedTexture, size: CGSize(width: 250, height: 250))
+        selectButton.position = CGPoint(x: frame.midX, y: frame.midY - 900)
+        selectButton.zPosition = -1
+        addChild(selectButton)
+        let moveUp = SKAction.moveTo(y: frame.midY - 525, duration: 0.5)
+        selectButton.run(moveUp)
+        
+        
+        let normalTexture1 = SKTexture(imageNamed: "backButton")
+        let selectedTexture1 = SKTexture(imageNamed: "backButtonSelected")
+        let customBackButton = CustomBackButton(defaultTexture: normalTexture1, selectedTexture: selectedTexture1, size: CGSize(width: 250, height: 250))
+        customBackButton.position = CGPoint(x: frame.midX - 200, y: frame.midY + 1000)
+        customBackButton.zPosition = -1
+        addChild(customBackButton)
+        let moveUp1 = SKAction.moveTo(y: frame.midY + 450, duration: 0.5)
+        customBackButton.run(moveUp1)
+        
+        
+
+
         
         
     }
@@ -93,9 +114,17 @@ class GameScene2: SKScene {
             let touchedNode = atPoint(location)
             if touchedNode.name == "selectionArrowRight" {
                 currentIndex = (currentIndex + 1) % duckSprites.count
+                let growAction = SKAction.scale(to: -1.2, duration: 0.1)
+                                let shrinkAction = SKAction.scale(to: -1.0, duration: 0.1)
+                                let sequence = SKAction.sequence([growAction, shrinkAction])
+                selectionArrowRight.run(sequence)
                 updateDisplayedDuck()
             } else if touchedNode.name == "selectionArrowLeft" {
                 currentIndex = (currentIndex - 1 + duckSprites.count) % duckSprites.count
+                let growAction = SKAction.scale(to: 1.2, duration: 0.1)
+                                let shrinkAction = SKAction.scale(to: 1.0, duration: 0.1)
+                                let sequence = SKAction.sequence([growAction, shrinkAction])
+                selectionArrowLeft.run(sequence)
                 updateDisplayedDuck()
             }
         }

@@ -33,5 +33,9 @@ class SelectButton: SKSpriteNode {
         alpha = 1.0
         self.texture = defaultTexture
         let transition = SKTransition.fade(withDuration: 2.5)
+        if let scene = SKScene(fileNamed: "GameScene3") {
+            scene.scaleMode = .aspectFill
+            self.scene?.view?.presentScene(scene, transition: transition)
+        }
     }
 }
