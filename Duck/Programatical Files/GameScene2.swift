@@ -63,7 +63,20 @@ class GameScene2: SKScene {
     
     func createButtons() {
 
-        
+        let normalTexture = SKTexture(imageNamed: "backButton")
+        let normalTexture2 = SKTexture(imageNamed: "SelectButton")
+        let selectedTexture = SKTexture(imageNamed: "backButtonSelected")
+        let selectedTexture2 = SKTexture(imageNamed: "SelectButtonSelected")
+        let customButton2 = SelectButton(defaultTexture: normalTexture2, selectedTexture: selectedTexture2, size: CGSize(width: 250, height: 250))
+        let customButton = CustomBackButton(defaultTexture: normalTexture, selectedTexture: selectedTexture, size: CGSize(width: 250, height: 250))
+        customButton.position = CGPoint(x: frame.midX - 200, y: frame.midY + 900)
+        customButton.zPosition = -1
+        customButton2.position = CGPoint(x: frame.midX, y: frame.midY - 300)
+        addChild(customButton)
+        addChild(customButton2)
+        let moveDown = SKAction.moveTo(y: frame.midY + 575, duration: 0.5)
+        customButton.run(moveDown)
+                
         let arrowSize = CGSize(width: 300, height: 300) // Increase size
         
         let arrowLeft = SKTexture(imageNamed: "selectionArrow")
@@ -82,8 +95,6 @@ class GameScene2: SKScene {
         selectionArrowRight.yScale = -1
         addChild(selectionArrowRight)
         
-        let normalTexture = SKTexture(imageNamed: "SelectButton")
-        let selectedTexture = SKTexture(imageNamed: "SelectButtonSelected")
         let selectButton = SelectButton(defaultTexture: normalTexture, selectedTexture: selectedTexture, size: CGSize(width: 250, height: 250))
         selectButton.position = CGPoint(x: frame.midX, y: frame.midY - 900)
         selectButton.zPosition = -1
