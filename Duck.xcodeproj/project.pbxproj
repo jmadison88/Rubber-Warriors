@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3016DF8D2BC74B2B000CC381 /* GameScene3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3016DF8C2BC74B2B000CC381 /* GameScene3.sks */; };
 		3016DF8F2BC74B3B000CC381 /* GameScene3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3016DF8E2BC74B3B000CC381 /* GameScene3.swift */; };
+		3029A3CB2BCAC11700D8E1C9 /* GameScene4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029A3CA2BCAC11700D8E1C9 /* GameScene4.swift */; };
+		3029A3CD2BCAC13100D8E1C9 /* GameScene4.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3029A3CC2BCAC13100D8E1C9 /* GameScene4.sks */; };
 		4672293C2BBAFF8600D53F6E /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4672293B2BBAFF8600D53F6E /* SelectButton.swift */; };
 		468E62C92BAC8D1F004E9638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E62C82BAC8D1F004E9638 /* AppDelegate.swift */; };
 		468E62CB2BAC8D1F004E9638 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 468E62CA2BAC8D1F004E9638 /* GameScene.sks */; };
@@ -49,6 +51,8 @@
 /* Begin PBXFileReference section */
 		3016DF8C2BC74B2B000CC381 /* GameScene3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene3.sks; sourceTree = "<group>"; };
 		3016DF8E2BC74B3B000CC381 /* GameScene3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene3.swift; sourceTree = "<group>"; };
+		3029A3CA2BCAC11700D8E1C9 /* GameScene4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene4.swift; sourceTree = "<group>"; };
+		3029A3CC2BCAC13100D8E1C9 /* GameScene4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene4.sks; sourceTree = "<group>"; };
 		463F9CE52BC050650014A761 /* Quack_Attack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Quack_Attack.mp3; sourceTree = "<group>"; };
 		463F9CE62BC050680014A761 /* QuackCharacterSelect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = QuackCharacterSelect.mp3; sourceTree = "<group>"; };
 		4672293B2BBAFF8600D53F6E /* SelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 				468E62CA2BAC8D1F004E9638 /* GameScene.sks */,
 				468E62FB2BAC8D6A004E9638 /* GameScene2.sks */,
 				3016DF8C2BC74B2B000CC381 /* GameScene3.sks */,
+				3029A3CC2BCAC13100D8E1C9 /* GameScene4.sks */,
 				468E62CC2BAC8D1F004E9638 /* Actions.sks */,
 			);
 			path = Scenes;
@@ -136,6 +141,7 @@
 				468E62CE2BAC8D1F004E9638 /* GameScene.swift */,
 				468E62FF2BAC8DD7004E9638 /* GameScene2.swift */,
 				3016DF8E2BC74B3B000CC381 /* GameScene3.swift */,
+				3029A3CA2BCAC11700D8E1C9 /* GameScene4.swift */,
 			);
 			path = "Programatical Files";
 			sourceTree = "<group>";
@@ -313,6 +319,7 @@
 				468E62D62BAC8D21004E9638 /* Assets.xcassets in Resources */,
 				468E63022BAC8E4C004E9638 /* Quack_Attack.mp3 in Resources */,
 				468E62D92BAC8D21004E9638 /* LaunchScreen.storyboard in Resources */,
+				3029A3CD2BCAC13100D8E1C9 /* GameScene4.sks in Resources */,
 				468E62CD2BAC8D1F004E9638 /* Actions.sks in Resources */,
 				468E62FC2BAC8D6A004E9638 /* GameScene2.sks in Resources */,
 			);
@@ -342,6 +349,7 @@
 				468E62FE2BAC8DA8004E9638 /* CustomButton.swift in Sources */,
 				468E62CF2BAC8D1F004E9638 /* GameScene.swift in Sources */,
 				468E62D12BAC8D1F004E9638 /* GameViewController.swift in Sources */,
+				3029A3CB2BCAC11700D8E1C9 /* GameScene4.swift in Sources */,
 				468E63042BAC9547004E9638 /* CustomBackButton.swift in Sources */,
 				468E63002BAC8DD7004E9638 /* GameScene2.swift in Sources */,
 				4672293C2BBAFF8600D53F6E /* SelectButton.swift in Sources */,
