@@ -89,7 +89,7 @@ class GameScene2: SKScene {
         let selectedTexture2 = SKTexture(imageNamed: "SelectButtonSelected")
         
         
-        let selectButton = SelectButton(defaultTexture: normalTexture2, selectedTexture: selectedTexture2, size: CGSize(width: 250, height: 250))
+        let selectButton = ThirdButton(defaultTexture: normalTexture2, selectedTexture: selectedTexture2, size: CGSize(width: 250, height: 250))
         selectButton.position = CGPoint(x: frame.midX, y: frame.midY - 900)
         selectButton.zPosition = -1
         addChild(selectButton)

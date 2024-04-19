@@ -1,14 +1,14 @@
 //
-//  SelectButton.swift
+//  FirstButton.swift
 //  Duck
 //
-//  Created by Josh Madison on 4/1/24.
+//  Created by Caden Christesen on 4/17/24.
 //
 
 import SpriteKit
 import GameplayKit
 
-class SelectButton: SKSpriteNode {
+class SecondButton: SKSpriteNode {
     
     var defaultTexture: SKTexture
     var selectedTexture: SKTexture
@@ -33,7 +33,7 @@ class SelectButton: SKSpriteNode {
         alpha = 1.0
         self.texture = defaultTexture
         let transition = SKTransition.fade(withDuration: 2.5)
-        if let scene = SKScene(fileNamed: "GameScene4") {
+        if let scene = SKScene(fileNamed: "GameScene2") {
             scene.scaleMode = .aspectFill
             self.scene?.view?.presentScene(scene, transition: transition)
         }

@@ -64,7 +64,7 @@ class GameScene: SKScene {
     func createButtons() {
         let normalTexture = SKTexture(imageNamed: "startButton")
         let selectedTexture = SKTexture(imageNamed: "selectedButton")
-        let customButton = CustomButton(defaultTexture: normalTexture, selectedTexture: selectedTexture, size: CGSize(width: 250, height: 250))
+        let customButton = FirstButton(defaultTexture: normalTexture, selectedTexture: selectedTexture, size: CGSize(width: 250, height: 250))
         customButton.position = CGPoint(x: frame.midX, y: frame.midY - 900)
         customButton.zPosition = -1
         addChild(customButton)

@@ -1,14 +1,14 @@
 //
-//  SelectButton.swift
+//  FirstButton.swift
 //  Duck
 //
-//  Created by Josh Madison on 4/1/24.
+//  Created by Caden Christesen on 4/17/24.
 //
 
 import SpriteKit
 import GameplayKit
 
-class SelectButton: SKSpriteNode {
+class FirstButton: SKSpriteNode {
     
     var defaultTexture: SKTexture
     var selectedTexture: SKTexture
