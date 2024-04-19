@@ -12,7 +12,7 @@ class GameScene3: SKScene {
     var subtractButton: SKSpriteNode!
     var heavyButton: SKSpriteNode!
     var dodgeButton: SKSpriteNode!
-    var hpLabel: SKLabelNode!
+    var hpLabel = SKLabelNode(fontNamed: "Verdana-Bold")
     var playerTurn = "Goose"
     var enemyHp = 100
     var DuckStam = 100
@@ -45,32 +45,34 @@ class GameScene3: SKScene {
     }
         // Add your scene elements here
     func createLabel(){
-        // Example of adding a label
         let turnLabel = SKLabelNode(fontNamed: "Verdana-Bold")
-        turnLabel.text = "Turn: \(playerTurn)"
-        turnLabel.fontSize = 24
-        turnLabel.fontColor = .black
-        turnLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 300)
-        addChild(turnLabel)
-        
-         
-        
-        turnLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 250)
-        
+                turnLabel.text = "Turn: \(playerTurn)"
+                turnLabel.fontSize = 24
+                turnLabel.fontColor = .black
+                turnLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 300)
+                addChild(turnLabel)
+
+                // Remove redeclaration of hpLabel
+                hpLabel.text = "Enemy HP: \(enemyHp)"
+                hpLabel.fontSize = 24
+                hpLabel.fontColor = .black
+                hpLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 350)
+                addChild(hpLabel)
+
+                turnLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 250)
         
     }
     
     func createGoose(){
         var badSprite = SKSpriteNode(imageNamed: "")
-        if(enemyHp > 0){
-            badSprite = SKSpriteNode(imageNamed: "goose")
-        }
-        else{
-            badSprite = SKSpriteNode(imageNamed: "goosesketch")
-        }
-        badSprite.size = CGSize(width: 200, height: 200)
-        badSprite.position = CGPoint(x: frame.midX, y: frame.midY + 100)
-        addChild(badSprite)
+                if enemyHp > 0 {
+                    badSprite = SKSpriteNode(imageNamed: "goose")
+                } else {
+                    badSprite = SKSpriteNode(imageNamed: "goosesketch")
+                }
+                badSprite.size = CGSize(width: 200, height: 200)
+                badSprite.position = CGPoint(x: frame.midX, y: frame.midY + 100)
+                addChild(badSprite)
     }
     
     func createDuck() {
@@ -162,7 +164,9 @@ class GameScene3: SKScene {
         }
     
     override func update(_ currentTime: TimeInterval) {
-        // Update your game logic here
+        hpLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 350)
+                // Update HP label text
+                hpLabel.text = "Enemy HP: \(enemyHp)"
     }
     
     
