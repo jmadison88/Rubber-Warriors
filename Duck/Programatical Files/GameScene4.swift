@@ -42,7 +42,7 @@ class GameScene4: SKScene {
         
         //button 1
         
-        let selectButton1 = SecondButton(defaultTexture: normalTexture2, selectedTexture: selectedTexture2, size: CGSize(width: 250, height: 250))
+        let selectButton1 = SecondButton(defaultTexture: SKTexture(imageNamed: "LevelButton1"), selectedTexture: SKTexture(imageNamed: "LevelButton1Selected"), size: CGSize(width: 250, height: 250))
         selectButton1.position = CGPoint(x: frame.midX - 15, y: frame.midY - 900)
         selectButton1.zPosition = -1
         addChild(selectButton1)
@@ -51,7 +51,7 @@ class GameScene4: SKScene {
         
         //button 2
         
-        let selectButton2 = SecondButton(defaultTexture: normalTexture2, selectedTexture: selectedTexture2, size: CGSize(width: 250, height: 250))
+        let selectButton2 = SecondButton(defaultTexture: SKTexture(imageNamed: "LevelButton2"), selectedTexture: SKTexture(imageNamed: "LevelButton2Selected"), size: CGSize(width: 250, height: 250))
         selectButton2.position = CGPoint(x: frame.midX - 50, y: frame.midY - 900)
         selectButton2.zPosition = -1
         addChild(selectButton2)
@@ -60,7 +60,7 @@ class GameScene4: SKScene {
         
         //button 3
         
-        let selectButton3 = SecondButton(defaultTexture: normalTexture2, selectedTexture: selectedTexture2, size: CGSize(width: 250, height: 250))
+        let selectButton3 = SecondButton(defaultTexture: SKTexture(imageNamed: "LevelButton3"), selectedTexture: SKTexture(imageNamed: "LevelButton3Selected"), size: CGSize(width: 250, height: 250))
         selectButton3.position = CGPoint(x: frame.midX - 52, y: frame.midY - 900)
         selectButton3.zPosition = -1
         addChild(selectButton3)
@@ -68,9 +68,9 @@ class GameScene4: SKScene {
         selectButton3.run(moveUp3)
         
         
-        let normalTexture1 = SKTexture(imageNamed: "backButton")
-        let selectedTexture1 = SKTexture(imageNamed: "backButtonSelected")
-        let customBackButton = CustomBackButton(defaultTexture: normalTexture1, selectedTexture: selectedTexture1, size: CGSize(width: 150, height: 150))
+        let normalTexture1 = SKTexture(imageNamed: "ActualBackButton")
+        let selectedTexture1 = SKTexture(imageNamed: "ActualBackButton")
+        let customBackButton = CustomBackButton(defaultTexture: normalTexture1, selectedTexture: selectedTexture1, size: CGSize(width: 250, height: 250))
         customBackButton.position = CGPoint(x: frame.midX - 225 , y: frame.midY + 575)
         customBackButton.zPosition = -1
         addChild(customBackButton)

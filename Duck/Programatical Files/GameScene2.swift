@@ -97,8 +97,8 @@ class GameScene2: SKScene {
         selectButton.run(moveUp)
         
         
-        let normalTexture1 = SKTexture(imageNamed: "backButton")
-        let selectedTexture1 = SKTexture(imageNamed: "backButtonSelected")
+        let normalTexture1 = SKTexture(imageNamed: "ActualBackButton")
+        let selectedTexture1 = SKTexture(imageNamed: "ActualBackButton")
         let customBackButton = CustomBackButton(defaultTexture: normalTexture1, selectedTexture: selectedTexture1, size: CGSize(width: 250, height: 250))
         customBackButton.position = CGPoint(x: frame.midX - 200, y: frame.midY + 1000)
         customBackButton.zPosition = -1
