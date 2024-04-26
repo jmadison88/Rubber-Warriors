@@ -9,6 +9,8 @@ class GameScene2: SKScene {
     var earthDuck: SKSpriteNode!
     var selectionArrowLeft: SKSpriteNode!
     var selectionArrowRight: SKSpriteNode!
+    var currentSelectedDuck = ""
+    var BasicDuckArray = ["Original", "Fire", "Earth"]
 
     override func didMove(to view: SKView) {
         createBackground()
@@ -140,7 +142,12 @@ class GameScene2: SKScene {
             duck.isHidden = true
         }
         duckSprites[currentIndex].isHidden = false
+        
+        currentSelectedDuck = BasicDuckArray[currentIndex]
+
     }
+    
+    
     
     override func update(_ currentTime: TimeInterval) {
         // Update code here

@@ -13,6 +13,8 @@ class GameScene3: SKScene {
     var heavyButton: SKSpriteNode!
     var dodgeButton: SKSpriteNode!
     var hpLabel = SKLabelNode(fontNamed: "Verdana-Bold")
+    var duckhealthlabel = SKLabelNode(fontNamed: "Verdana-Bold")
+    var duckStaminaLabel = SKLabelNode(fontNamed: "Verdana-Bold")
     var playerTurn = "Goose"
     var enemyHp = 100
     var DuckStam = 100
@@ -58,8 +60,24 @@ class GameScene3: SKScene {
                 hpLabel.fontColor = .black
                 hpLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 350)
                 addChild(hpLabel)
+        
+
+        
+        duckhealthlabel.text = "Health HP: \(duckHealth)"
+        duckhealthlabel.fontSize = 24
+        duckhealthlabel.fontColor = .black
+        duckhealthlabel.position = CGPoint(x: frame.midX, y: frame.maxY - 400)
+        addChild(duckhealthlabel)
 
                 turnLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 250)
+        
+        duckStaminaLabel.text = "Duck Stamina: \(DuckStam)"
+        duckStaminaLabel.fontSize = 24
+        duckStaminaLabel.fontColor = .black
+        duckStaminaLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 450)
+        addChild(duckStaminaLabel)
+
+                turnLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 150)
         
     }
     
@@ -132,32 +150,43 @@ class GameScene3: SKScene {
                 
                 if touchedNode.name == "subtractButton" {
                     subtractHP()
+                    gooseAttack()
+                    duckhealthlabel.text = "Health HP: \(duckHealth)"
                 }
                 if touchedNode.name == "heavyButton" {
                     subtractHPHeavy()
+                    gooseAttack()
+                    duckhealthlabel.text = "Health HP: \(duckHealth)"
                 }
                 if touchedNode.name == "dodgeButton" {
                     gooseDodgeAttack()
+                    gooseAttack()
+                    duckhealthlabel.text = "Health HP: \(duckHealth)"
                 }
             }
         }
     func gooseAttack() {
         let damage = CGFloat(arc4random_uniform(5) + 5)
         duckHealth -= Int(damage)
+        duckhealthlabel.text = "duckHP: \(duckHealth)"
     }
     func gooseDodgeAttack() {
         let damage = CGFloat(arc4random_uniform(5))
         duckHealth -= Int(damage)
+        DuckStam = 100
+        duckStaminaLabel.text = "Duck Stamina: \(DuckStam)"
     }
     
     func subtractHP() {
         DuckStam -= 10
+        duckStaminaLabel.text = "Duck Stamina: \(DuckStam)"
         let damage = CGFloat(arc4random_uniform(10) + 5)
         enemyHp -= Int(damage)
             hpLabel.text = "Enemy HP: \(enemyHp)"
         }
     func subtractHPHeavy() {
         DuckStam -= 15
+        duckStaminaLabel.text = "Duck Stamina: \(DuckStam)"
         let damage = CGFloat(arc4random_uniform(15) + 5)
         enemyHp -= Int(damage)
             hpLabel.text = "Enemy HP: \(enemyHp)"
@@ -167,6 +196,11 @@ class GameScene3: SKScene {
         hpLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 350)
                 // Update HP label text
                 hpLabel.text = "Enemy HP: \(enemyHp)"
+        duckhealthlabel.position = CGPoint(x: frame.midX, y: frame.maxY - 400)
+        duckhealthlabel.text = "duckHP: \(duckHealth)"
+        duckStaminaLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 450)
+        duckStaminaLabel.text = "Duck Stamina: \(DuckStam)"
+        
     }
     
     
