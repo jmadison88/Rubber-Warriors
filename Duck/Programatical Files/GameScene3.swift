@@ -19,6 +19,7 @@ class GameScene3: SKScene {
     var enemyHp = 100
     var DuckStam = 100
     var duckHealth = 100
+    var badSprite = SKSpriteNode(imageNamed: "")
     
     
     static var selectedDuck: SKSpriteNode?
@@ -82,7 +83,6 @@ class GameScene3: SKScene {
     }
     
     func createGoose(){
-        var badSprite = SKSpriteNode(imageNamed: "")
                 if enemyHp > 0 {
                     badSprite = SKSpriteNode(imageNamed: "goose")
                 } else {
@@ -149,12 +149,16 @@ class GameScene3: SKScene {
                 let touchedNode = self.atPoint(location)
                 
                 if touchedNode.name == "subtractButton" {
-                    subtractHP()
+                    if DuckStam >= 10 {
+                        subtractHP()
+                    }
                     gooseAttack()
                     duckhealthlabel.text = "Health HP: \(duckHealth)"
                 }
                 if touchedNode.name == "heavyButton" {
-                    subtractHPHeavy()
+                    if DuckStam >= 15 {
+                        subtractHPHeavy()
+                    }
                     gooseAttack()
                     duckhealthlabel.text = "Health HP: \(duckHealth)"
                 }
@@ -200,6 +204,9 @@ class GameScene3: SKScene {
         duckhealthlabel.text = "duckHP: \(duckHealth)"
         duckStaminaLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 450)
         duckStaminaLabel.text = "Duck Stamina: \(DuckStam)"
+        if enemyHp <= 0 {
+            badSprite.texture = SKTexture(imageNamed: "goosesketch")
+        }
         
     }
     
