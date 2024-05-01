@@ -20,6 +20,9 @@ class GameScene3: SKScene {
     var DuckStam = 100
     var duckHealth = 100
     var badSprite = SKSpriteNode(imageNamed: "")
+    var duckHealthBar: SKShapeNode!
+    var enemyHealthBar: SKShapeNode!
+
     
     
     static var selectedDuck: SKSpriteNode?
@@ -34,6 +37,8 @@ class GameScene3: SKScene {
         createDuck()
         createDodgeButton()
         heavyAttackButton()
+        createHealthBars()
+
 
     }
     
@@ -46,6 +51,7 @@ class GameScene3: SKScene {
             addChild((riverBackground))
         }
     }
+    
         // Add your scene elements here
     func createLabel(){
         let turnLabel = SKLabelNode(fontNamed: "Verdana-Bold")
@@ -81,6 +87,22 @@ class GameScene3: SKScene {
                 turnLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 150)
         
     }
+    func createHealthBars() {
+            // Create health bars for duck and enemy duck
+            let healthBarSize = CGSize(width: 200, height: 20)
+            
+            duckHealthBar = SKShapeNode(rectOf: healthBarSize)
+            duckHealthBar.fillColor = .green
+            duckHealthBar.position = CGPoint(x: frame.midX, y: frame.midY - 300)
+            addChild(duckHealthBar)
+        
+        
+            
+            enemyHealthBar = SKShapeNode(rectOf: healthBarSize)
+            enemyHealthBar.fillColor = .red
+            enemyHealthBar.position = CGPoint(x: frame.midX, y: frame.maxY - 450)
+            addChild(enemyHealthBar)
+        }
     
     func createGoose(){
                 if enemyHp > 0 {
@@ -197,6 +219,13 @@ class GameScene3: SKScene {
         }
     
     override func update(_ currentTime: TimeInterval) {
+        let duckHealthPercentage = CGFloat(duckHealth) / 100.0
+                duckHealthBar.xScale = duckHealthPercentage
+                
+                let enemyHealthPercentage = CGFloat(enemyHp) / 100.0
+                enemyHealthBar.xScale = enemyHealthPercentage
+                
+        
         hpLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 350)
                 // Update HP label text
                 hpLabel.text = "Enemy HP: \(enemyHp)"
