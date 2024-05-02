@@ -11,10 +11,7 @@
 		3016DF8F2BC74B3B000CC381 /* GameScene3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3016DF8E2BC74B3B000CC381 /* GameScene3.swift */; };
 		3029A3CB2BCAC11700D8E1C9 /* GameScene4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029A3CA2BCAC11700D8E1C9 /* GameScene4.swift */; };
 		3029A3CD2BCAC13100D8E1C9 /* GameScene4.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3029A3CC2BCAC13100D8E1C9 /* GameScene4.sks */; };
-		308EB5882BD03A0C0032AD63 /* FirstButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308EB5872BD03A0C0032AD63 /* FirstButton.swift */; };
-		308EB58A2BD03A1F0032AD63 /* SecondButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308EB5892BD03A1F0032AD63 /* SecondButton.swift */; };
-		308EB58C2BD03A270032AD63 /* Third Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308EB58B2BD03A270032AD63 /* Third Button.swift */; };
-		4672293C2BBAFF8600D53F6E /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4672293B2BBAFF8600D53F6E /* SelectButton.swift */; };
+		308EB5882BD03A0C0032AD63 /* LevelButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308EB5872BD03A0C0032AD63 /* LevelButtons.swift */; };
 		468E62C92BAC8D1F004E9638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E62C82BAC8D1F004E9638 /* AppDelegate.swift */; };
 		468E62CB2BAC8D1F004E9638 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 468E62CA2BAC8D1F004E9638 /* GameScene.sks */; };
 		468E62CD2BAC8D1F004E9638 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 468E62CC2BAC8D1F004E9638 /* Actions.sks */; };
@@ -56,12 +53,9 @@
 		3016DF8E2BC74B3B000CC381 /* GameScene3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene3.swift; sourceTree = "<group>"; };
 		3029A3CA2BCAC11700D8E1C9 /* GameScene4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene4.swift; sourceTree = "<group>"; };
 		3029A3CC2BCAC13100D8E1C9 /* GameScene4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene4.sks; sourceTree = "<group>"; };
-		308EB5872BD03A0C0032AD63 /* FirstButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstButton.swift; sourceTree = "<group>"; };
-		308EB5892BD03A1F0032AD63 /* SecondButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondButton.swift; sourceTree = "<group>"; };
-		308EB58B2BD03A270032AD63 /* Third Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Third Button.swift"; sourceTree = "<group>"; };
+		308EB5872BD03A0C0032AD63 /* LevelButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelButtons.swift; sourceTree = "<group>"; };
 		463F9CE52BC050650014A761 /* Quack_Attack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Quack_Attack.mp3; sourceTree = "<group>"; };
 		463F9CE62BC050680014A761 /* QuackCharacterSelect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = QuackCharacterSelect.mp3; sourceTree = "<group>"; };
-		4672293B2BBAFF8600D53F6E /* SelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
 		468E62C52BAC8D1F004E9638 /* Duck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Duck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		468E62C82BAC8D1F004E9638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		468E62CA2BAC8D1F004E9638 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -113,10 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				468E62FD2BAC8DA8004E9638 /* CustomButton.swift */,
-				4672293B2BBAFF8600D53F6E /* SelectButton.swift */,
-				308EB5872BD03A0C0032AD63 /* FirstButton.swift */,
-				308EB5892BD03A1F0032AD63 /* SecondButton.swift */,
-				308EB58B2BD03A270032AD63 /* Third Button.swift */,
+				308EB5872BD03A0C0032AD63 /* LevelButtons.swift */,
 				468E63032BAC9547004E9638 /* CustomBackButton.swift */,
 			);
 			path = Buttons;
@@ -355,16 +346,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				308EB5882BD03A0C0032AD63 /* FirstButton.swift in Sources */,
+				308EB5882BD03A0C0032AD63 /* LevelButtons.swift in Sources */,
 				468E62FE2BAC8DA8004E9638 /* CustomButton.swift in Sources */,
-				308EB58A2BD03A1F0032AD63 /* SecondButton.swift in Sources */,
 				468E62CF2BAC8D1F004E9638 /* GameScene.swift in Sources */,
-				308EB58C2BD03A270032AD63 /* Third Button.swift in Sources */,
 				468E62D12BAC8D1F004E9638 /* GameViewController.swift in Sources */,
 				3029A3CB2BCAC11700D8E1C9 /* GameScene4.swift in Sources */,
 				468E63042BAC9547004E9638 /* CustomBackButton.swift in Sources */,
 				468E63002BAC8DD7004E9638 /* GameScene2.swift in Sources */,
-				4672293C2BBAFF8600D53F6E /* SelectButton.swift in Sources */,
 				3016DF8F2BC74B3B000CC381 /* GameScene3.swift in Sources */,
 				468E62C92BAC8D1F004E9638 /* AppDelegate.swift in Sources */,
 			);
