@@ -22,6 +22,7 @@ class GameScene3: SKScene {
     var badSprite = SKSpriteNode(imageNamed: "")
     var duckHealthBar: SKShapeNode!
     var enemyHealthBar: SKShapeNode!
+    var staminaBar: SKShapeNode!
 
     
     
@@ -102,6 +103,11 @@ class GameScene3: SKScene {
             enemyHealthBar.fillColor = .red
             enemyHealthBar.position = CGPoint(x: frame.midX, y: frame.maxY - 450)
             addChild(enemyHealthBar)
+        
+        staminaBar = SKShapeNode(rectOf: healthBarSize)
+        staminaBar.fillColor = .yellow
+        staminaBar.position = CGPoint(x: frame.midX, y: frame.maxY - 270)
+        addChild(staminaBar)
         }
     
     func createGoose(){
@@ -224,6 +230,9 @@ class GameScene3: SKScene {
                 
                 let enemyHealthPercentage = CGFloat(enemyHp) / 100.0
                 enemyHealthBar.xScale = enemyHealthPercentage
+        
+        let staminaPercentage = CGFloat(DuckStam) / 100.0
+        staminaBar.xScale = staminaPercentage
                 
         
         hpLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 350)
