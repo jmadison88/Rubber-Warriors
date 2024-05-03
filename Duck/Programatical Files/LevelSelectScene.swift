@@ -7,7 +7,7 @@
 
 import SpriteKit
 
-class GameScene4: SKScene {
+class LevelSelectScene: SKScene {
     
     var currentIndex = 0
     var duckSprites: [SKSpriteNode] = []
@@ -42,7 +42,7 @@ class GameScene4: SKScene {
         
         //button 1
         
-        let selectButton1 = SecondButton(defaultTexture: SKTexture(imageNamed: "LevelButton1"), selectedTexture: SKTexture(imageNamed: "LevelButton1Selected"), size: CGSize(width: 250, height: 250))
+        let selectButton1 = Level1Button(defaultTexture: SKTexture(imageNamed: "LevelButton1"), selectedTexture: SKTexture(imageNamed: "LevelButton1Selected"), size: CGSize(width: 250, height: 250))
         selectButton1.position = CGPoint(x: frame.midX - 15, y: frame.midY - 900)
         selectButton1.zPosition = -1
         addChild(selectButton1)
@@ -51,7 +51,7 @@ class GameScene4: SKScene {
         
         //button 2
         
-        let selectButton2 = SecondButton(defaultTexture: SKTexture(imageNamed: "LevelButton2"), selectedTexture: SKTexture(imageNamed: "LevelButton2Selected"), size: CGSize(width: 250, height: 250))
+        let selectButton2 = Level2Button(defaultTexture: SKTexture(imageNamed: "LevelButton2"), selectedTexture: SKTexture(imageNamed: "LevelButton2Selected"), size: CGSize(width: 250, height: 250))
         selectButton2.position = CGPoint(x: frame.midX - 50, y: frame.midY - 900)
         selectButton2.zPosition = -1
         addChild(selectButton2)
@@ -60,7 +60,7 @@ class GameScene4: SKScene {
         
         //button 3
         
-        let selectButton3 = SecondButton(defaultTexture: SKTexture(imageNamed: "LevelButton3"), selectedTexture: SKTexture(imageNamed: "LevelButton3Selected"), size: CGSize(width: 250, height: 250))
+        let selectButton3 = Level3Button(defaultTexture: SKTexture(imageNamed: "LevelButton3"), selectedTexture: SKTexture(imageNamed: "LevelButton3Selected"), size: CGSize(width: 250, height: 250))
         selectButton3.position = CGPoint(x: frame.midX - 52, y: frame.midY - 900)
         selectButton3.zPosition = -1
         addChild(selectButton3)

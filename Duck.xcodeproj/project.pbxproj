@@ -7,15 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3016DF8D2BC74B2B000CC381 /* GameScene3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3016DF8C2BC74B2B000CC381 /* GameScene3.sks */; };
-		3016DF8F2BC74B3B000CC381 /* GameScene3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3016DF8E2BC74B3B000CC381 /* GameScene3.swift */; };
-		3029A3CB2BCAC11700D8E1C9 /* GameScene4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029A3CA2BCAC11700D8E1C9 /* GameScene4.swift */; };
-		3029A3CD2BCAC13100D8E1C9 /* GameScene4.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3029A3CC2BCAC13100D8E1C9 /* GameScene4.sks */; };
+		3016DF8D2BC74B2B000CC381 /* DuckSelectScene1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3016DF8C2BC74B2B000CC381 /* DuckSelectScene1.sks */; };
+		3016DF8F2BC74B3B000CC381 /* Level1Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3016DF8E2BC74B3B000CC381 /* Level1Scene.swift */; };
+		3029A3CB2BCAC11700D8E1C9 /* LevelSelectScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029A3CA2BCAC11700D8E1C9 /* LevelSelectScene.swift */; };
+		3029A3CD2BCAC13100D8E1C9 /* Level1Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3029A3CC2BCAC13100D8E1C9 /* Level1Scene.sks */; };
+		308A91402BE5236600578657 /* Level2Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A913F2BE5236600578657 /* Level2Scene.swift */; };
+		308A91422BE5246300578657 /* Level3Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A91412BE5246300578657 /* Level3Scene.swift */; };
+		308A91442BE525B600578657 /* Level2Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 308A91432BE525B600578657 /* Level2Scene.sks */; };
+		308A91462BE525C000578657 /* Level3Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 308A91452BE525C000578657 /* Level3Scene.sks */; };
+		308A91482BE5268B00578657 /* DuckSelectScene2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A91472BE5268B00578657 /* DuckSelectScene2.swift */; };
+		308A914A2BE5269600578657 /* DuckSelectScene3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A91492BE5269600578657 /* DuckSelectScene3.swift */; };
+		308A914C2BE527A600578657 /* DuckSelectScene2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 308A914B2BE527A600578657 /* DuckSelectScene2.sks */; };
+		308A914E2BE527B000578657 /* DuckSelectScene3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 308A914D2BE527B000578657 /* DuckSelectScene3.sks */; };
 		308EB5882BD03A0C0032AD63 /* LevelButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308EB5872BD03A0C0032AD63 /* LevelButtons.swift */; };
 		468E62C92BAC8D1F004E9638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E62C82BAC8D1F004E9638 /* AppDelegate.swift */; };
-		468E62CB2BAC8D1F004E9638 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 468E62CA2BAC8D1F004E9638 /* GameScene.sks */; };
+		468E62CB2BAC8D1F004E9638 /* TitleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 468E62CA2BAC8D1F004E9638 /* TitleScene.sks */; };
 		468E62CD2BAC8D1F004E9638 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 468E62CC2BAC8D1F004E9638 /* Actions.sks */; };
-		468E62CF2BAC8D1F004E9638 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E62CE2BAC8D1F004E9638 /* GameScene.swift */; };
+		468E62CF2BAC8D1F004E9638 /* TitleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E62CE2BAC8D1F004E9638 /* TitleScene.swift */; };
 		468E62D12BAC8D1F004E9638 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E62D02BAC8D1F004E9638 /* GameViewController.swift */; };
 		468E62D42BAC8D1F004E9638 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468E62D22BAC8D1F004E9638 /* Main.storyboard */; };
 		468E62D62BAC8D21004E9638 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468E62D52BAC8D21004E9638 /* Assets.xcassets */; };
@@ -23,9 +31,9 @@
 		468E62E32BAC8D22004E9638 /* DuckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E62E22BAC8D22004E9638 /* DuckTests.swift */; };
 		468E62ED2BAC8D22004E9638 /* DuckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E62EC2BAC8D22004E9638 /* DuckUITests.swift */; };
 		468E62EF2BAC8D22004E9638 /* DuckUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E62EE2BAC8D22004E9638 /* DuckUITestsLaunchTests.swift */; };
-		468E62FC2BAC8D6A004E9638 /* GameScene2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 468E62FB2BAC8D6A004E9638 /* GameScene2.sks */; };
+		468E62FC2BAC8D6A004E9638 /* LevelSelectScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 468E62FB2BAC8D6A004E9638 /* LevelSelectScene.sks */; };
 		468E62FE2BAC8DA8004E9638 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E62FD2BAC8DA8004E9638 /* CustomButton.swift */; };
-		468E63002BAC8DD7004E9638 /* GameScene2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E62FF2BAC8DD7004E9638 /* GameScene2.swift */; };
+		468E63002BAC8DD7004E9638 /* DuckSelectScene1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E62FF2BAC8DD7004E9638 /* DuckSelectScene1.swift */; };
 		468E63022BAC8E4C004E9638 /* Quack_Attack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 468E63012BAC8E4C004E9638 /* Quack_Attack.mp3 */; };
 		468E63042BAC9547004E9638 /* CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E63032BAC9547004E9638 /* CustomBackButton.swift */; };
 		468E63062BACA570004E9638 /* QuackCharacterSelect.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 468E63052BACA570004E9638 /* QuackCharacterSelect.mp3 */; };
@@ -49,18 +57,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3016DF8C2BC74B2B000CC381 /* GameScene3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene3.sks; sourceTree = "<group>"; };
-		3016DF8E2BC74B3B000CC381 /* GameScene3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene3.swift; sourceTree = "<group>"; };
-		3029A3CA2BCAC11700D8E1C9 /* GameScene4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene4.swift; sourceTree = "<group>"; };
-		3029A3CC2BCAC13100D8E1C9 /* GameScene4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene4.sks; sourceTree = "<group>"; };
+		3016DF8C2BC74B2B000CC381 /* DuckSelectScene1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DuckSelectScene1.sks; sourceTree = "<group>"; };
+		3016DF8E2BC74B3B000CC381 /* Level1Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1Scene.swift; sourceTree = "<group>"; };
+		3029A3CA2BCAC11700D8E1C9 /* LevelSelectScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectScene.swift; sourceTree = "<group>"; };
+		3029A3CC2BCAC13100D8E1C9 /* Level1Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1Scene.sks; sourceTree = "<group>"; };
+		308A913F2BE5236600578657 /* Level2Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level2Scene.swift; sourceTree = "<group>"; };
+		308A91412BE5246300578657 /* Level3Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level3Scene.swift; sourceTree = "<group>"; };
+		308A91432BE525B600578657 /* Level2Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level2Scene.sks; sourceTree = "<group>"; };
+		308A91452BE525C000578657 /* Level3Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level3Scene.sks; sourceTree = "<group>"; };
+		308A91472BE5268B00578657 /* DuckSelectScene2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckSelectScene2.swift; sourceTree = "<group>"; };
+		308A91492BE5269600578657 /* DuckSelectScene3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckSelectScene3.swift; sourceTree = "<group>"; };
+		308A914B2BE527A600578657 /* DuckSelectScene2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DuckSelectScene2.sks; sourceTree = "<group>"; };
+		308A914D2BE527B000578657 /* DuckSelectScene3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DuckSelectScene3.sks; sourceTree = "<group>"; };
 		308EB5872BD03A0C0032AD63 /* LevelButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelButtons.swift; sourceTree = "<group>"; };
 		463F9CE52BC050650014A761 /* Quack_Attack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Quack_Attack.mp3; sourceTree = "<group>"; };
 		463F9CE62BC050680014A761 /* QuackCharacterSelect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = QuackCharacterSelect.mp3; sourceTree = "<group>"; };
 		468E62C52BAC8D1F004E9638 /* Duck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Duck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		468E62C82BAC8D1F004E9638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		468E62CA2BAC8D1F004E9638 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		468E62CA2BAC8D1F004E9638 /* TitleScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TitleScene.sks; sourceTree = "<group>"; };
 		468E62CC2BAC8D1F004E9638 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		468E62CE2BAC8D1F004E9638 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		468E62CE2BAC8D1F004E9638 /* TitleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScene.swift; sourceTree = "<group>"; };
 		468E62D02BAC8D1F004E9638 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		468E62D32BAC8D1F004E9638 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		468E62D52BAC8D21004E9638 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,9 +86,9 @@
 		468E62E82BAC8D22004E9638 /* DuckUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DuckUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		468E62EC2BAC8D22004E9638 /* DuckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckUITests.swift; sourceTree = "<group>"; };
 		468E62EE2BAC8D22004E9638 /* DuckUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		468E62FB2BAC8D6A004E9638 /* GameScene2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene2.sks; sourceTree = "<group>"; };
+		468E62FB2BAC8D6A004E9638 /* LevelSelectScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelSelectScene.sks; sourceTree = "<group>"; };
 		468E62FD2BAC8DA8004E9638 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		468E62FF2BAC8DD7004E9638 /* GameScene2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene2.swift; sourceTree = "<group>"; };
+		468E62FF2BAC8DD7004E9638 /* DuckSelectScene1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckSelectScene1.swift; sourceTree = "<group>"; };
 		468E63012BAC8E4C004E9638 /* Quack_Attack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Quack_Attack.mp3; path = ../../../Downloads/Quack_Attack.mp3; sourceTree = "<group>"; };
 		468E63032BAC9547004E9638 /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
 		468E63052BACA570004E9638 /* QuackCharacterSelect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = QuackCharacterSelect.mp3; path = ../../../Downloads/QuackCharacterSelect.mp3; sourceTree = "<group>"; };
@@ -125,11 +141,15 @@
 		463F9CE82BC050840014A761 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				468E62CA2BAC8D1F004E9638 /* GameScene.sks */,
-				468E62FB2BAC8D6A004E9638 /* GameScene2.sks */,
-				3016DF8C2BC74B2B000CC381 /* GameScene3.sks */,
-				3029A3CC2BCAC13100D8E1C9 /* GameScene4.sks */,
 				468E62CC2BAC8D1F004E9638 /* Actions.sks */,
+				468E62CA2BAC8D1F004E9638 /* TitleScene.sks */,
+				468E62FB2BAC8D6A004E9638 /* LevelSelectScene.sks */,
+				3016DF8C2BC74B2B000CC381 /* DuckSelectScene1.sks */,
+				308A914B2BE527A600578657 /* DuckSelectScene2.sks */,
+				308A914D2BE527B000578657 /* DuckSelectScene3.sks */,
+				3029A3CC2BCAC13100D8E1C9 /* Level1Scene.sks */,
+				308A91432BE525B600578657 /* Level2Scene.sks */,
+				308A91452BE525C000578657 /* Level3Scene.sks */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -138,10 +158,14 @@
 			isa = PBXGroup;
 			children = (
 				468E62D02BAC8D1F004E9638 /* GameViewController.swift */,
-				468E62CE2BAC8D1F004E9638 /* GameScene.swift */,
-				468E62FF2BAC8DD7004E9638 /* GameScene2.swift */,
-				3016DF8E2BC74B3B000CC381 /* GameScene3.swift */,
-				3029A3CA2BCAC11700D8E1C9 /* GameScene4.swift */,
+				468E62CE2BAC8D1F004E9638 /* TitleScene.swift */,
+				3029A3CA2BCAC11700D8E1C9 /* LevelSelectScene.swift */,
+				468E62FF2BAC8DD7004E9638 /* DuckSelectScene1.swift */,
+				308A91472BE5268B00578657 /* DuckSelectScene2.swift */,
+				308A91492BE5269600578657 /* DuckSelectScene3.swift */,
+				3016DF8E2BC74B3B000CC381 /* Level1Scene.swift */,
+				308A913F2BE5236600578657 /* Level2Scene.swift */,
+				308A91412BE5246300578657 /* Level3Scene.swift */,
 			);
 			path = "Programatical Files";
 			sourceTree = "<group>";
@@ -313,15 +337,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				468E63062BACA570004E9638 /* QuackCharacterSelect.mp3 in Resources */,
-				3016DF8D2BC74B2B000CC381 /* GameScene3.sks in Resources */,
+				308A914E2BE527B000578657 /* DuckSelectScene3.sks in Resources */,
+				308A914C2BE527A600578657 /* DuckSelectScene2.sks in Resources */,
+				3016DF8D2BC74B2B000CC381 /* DuckSelectScene1.sks in Resources */,
+				308A91442BE525B600578657 /* Level2Scene.sks in Resources */,
 				468E62D42BAC8D1F004E9638 /* Main.storyboard in Resources */,
-				468E62CB2BAC8D1F004E9638 /* GameScene.sks in Resources */,
+				468E62CB2BAC8D1F004E9638 /* TitleScene.sks in Resources */,
 				468E62D62BAC8D21004E9638 /* Assets.xcassets in Resources */,
 				468E63022BAC8E4C004E9638 /* Quack_Attack.mp3 in Resources */,
+				308A91462BE525C000578657 /* Level3Scene.sks in Resources */,
 				468E62D92BAC8D21004E9638 /* LaunchScreen.storyboard in Resources */,
-				3029A3CD2BCAC13100D8E1C9 /* GameScene4.sks in Resources */,
+				3029A3CD2BCAC13100D8E1C9 /* Level1Scene.sks in Resources */,
 				468E62CD2BAC8D1F004E9638 /* Actions.sks in Resources */,
-				468E62FC2BAC8D6A004E9638 /* GameScene2.sks in Resources */,
+				468E62FC2BAC8D6A004E9638 /* LevelSelectScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,14 +374,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				308A91482BE5268B00578657 /* DuckSelectScene2.swift in Sources */,
 				308EB5882BD03A0C0032AD63 /* LevelButtons.swift in Sources */,
 				468E62FE2BAC8DA8004E9638 /* CustomButton.swift in Sources */,
-				468E62CF2BAC8D1F004E9638 /* GameScene.swift in Sources */,
+				308A91402BE5236600578657 /* Level2Scene.swift in Sources */,
+				468E62CF2BAC8D1F004E9638 /* TitleScene.swift in Sources */,
+				308A91422BE5246300578657 /* Level3Scene.swift in Sources */,
 				468E62D12BAC8D1F004E9638 /* GameViewController.swift in Sources */,
-				3029A3CB2BCAC11700D8E1C9 /* GameScene4.swift in Sources */,
+				308A914A2BE5269600578657 /* DuckSelectScene3.swift in Sources */,
+				3029A3CB2BCAC11700D8E1C9 /* LevelSelectScene.swift in Sources */,
 				468E63042BAC9547004E9638 /* CustomBackButton.swift in Sources */,
-				468E63002BAC8DD7004E9638 /* GameScene2.swift in Sources */,
-				3016DF8F2BC74B3B000CC381 /* GameScene3.swift in Sources */,
+				468E63002BAC8DD7004E9638 /* DuckSelectScene1.swift in Sources */,
+				3016DF8F2BC74B3B000CC381 /* Level1Scene.swift in Sources */,
 				468E62C92BAC8D1F004E9638 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -33,7 +33,7 @@ class CustomBackButton: SKSpriteNode {
         alpha = 1.0
         self.texture = defaultTexture
         let transition = SKTransition.fade(withDuration: 2.5)
-        if let scene = SKScene(fileNamed: "GameScene") {
+        if let scene = SKScene(fileNamed: "TitleScene") {
             scene.scaleMode = .aspectFill
             self.scene?.view?.presentScene(scene, transition: transition)
         }

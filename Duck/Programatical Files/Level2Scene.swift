@@ -1,12 +1,12 @@
-
-//  GameScene3.swift
+//
+//  Level2Scene.swift
 //  Duck
 //
-//  Created by Caden Christesen on 4/10/24.
+//  Created by Caden Christesen on 5/3/24.
 //
 
 import SpriteKit
-class GameScene3: SKScene {
+class Level2Scene: SKScene {
     
     // State variables
     var subtractButton: SKSpriteNode!
@@ -112,7 +112,7 @@ class GameScene3: SKScene {
     
     func createGoose(){
                 if enemyHp > 0 {
-                    badSprite = SKSpriteNode(imageNamed: "goose")
+                    badSprite = SKSpriteNode(imageNamed: "canadagoose")
                 } else {
                     badSprite = SKSpriteNode(imageNamed: "goosesketch")
                 }
@@ -122,7 +122,7 @@ class GameScene3: SKScene {
     }
     
     func createDuck() {
-        if let selectedDuck = GameScene3.selectedDuck {
+        if let selectedDuck = Level2Scene.selectedDuck {
                // Remove the selected duck from its current parent node
                selectedDuck.removeFromParent()
                

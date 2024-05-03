@@ -8,7 +8,7 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class TitleScene: SKScene {
     
     var titleLabel = SKLabelNode()
     var originalDuck = SKSpriteNode()
