@@ -10,6 +10,7 @@ import GameplayKit
 
 class TitleScene: SKScene {
     
+    public static var Duck = "Original"
     var titleLabel = SKLabelNode()
     var originalDuck = SKSpriteNode()
     var startButton = SKSpriteNode()

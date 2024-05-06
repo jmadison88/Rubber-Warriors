@@ -150,7 +150,7 @@ class DuckSelectScene3: SKScene {
         }
         duckSprites[currentIndex].isHidden = false
         
-        currentSelectedDuck = BasicDuckArray[currentIndex]
+        TitleScene.Duck = BasicDuckArray[currentIndex]
 
     }
     

@@ -23,6 +23,7 @@ class Level1Scene: SKScene {
     var duckHealthBar: SKShapeNode!
     var enemyHealthBar: SKShapeNode!
     var staminaBar: SKShapeNode!
+    var goodSprite = SKSpriteNode(imageNamed: "")
 
     
     
@@ -122,20 +123,10 @@ class Level1Scene: SKScene {
     }
     
     func createDuck() {
-        if let selectedDuck = Level1Scene.selectedDuck {
-               // Remove the selected duck from its current parent node
-               selectedDuck.removeFromParent()
-               
-               // Set size and position of the selected duck
-               selectedDuck.size = CGSize(width: 500, height: 500)
-               selectedDuck.position = CGPoint(x: frame.midX, y: frame.midY - 300)
-            selectedDuck.zPosition = 3
-               
-               // Add the selected duck to GameScene3
-               addChild(selectedDuck)
-           } else {
-               print("No selected duck found.")
-           }
+        goodSprite = SKSpriteNode(imageNamed: TitleScene.Duck)
+        goodSprite.size = CGSize(width: 200, height: 200)
+        goodSprite.position = CGPoint(x: frame.midX, y: frame.midY - 100)
+        addChild(goodSprite)
     }
     
     
