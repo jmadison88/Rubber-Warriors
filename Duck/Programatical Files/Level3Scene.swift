@@ -26,6 +26,8 @@ class Level3Scene: SKScene {
     var staminaBar: SKShapeNode!
     var goodSprite = SKSpriteNode(imageNamed: "")
     
+    var gameIsActive = true
+    
     
     static var selectedDuck: SKSpriteNode?
         
@@ -68,7 +70,7 @@ class Level3Scene: SKScene {
                 hpLabel.fontSize = 24
                 hpLabel.fontColor = .black
                 hpLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 350)
-                addChild(hpLabel)
+           //     addChild(hpLabel)
         
 
         
@@ -76,15 +78,15 @@ class Level3Scene: SKScene {
         duckhealthlabel.fontSize = 24
         duckhealthlabel.fontColor = .black
         duckhealthlabel.position = CGPoint(x: frame.midX, y: frame.maxY - 400)
-        addChild(duckhealthlabel)
+     //   addChild(duckhealthlabel)
 
                 turnLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 250)
         
         duckStaminaLabel.text = "Duck Stamina: \(DuckStam)"
         duckStaminaLabel.fontSize = 24
         duckStaminaLabel.fontColor = .black
-        duckStaminaLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 450)
-        addChild(duckStaminaLabel)
+        duckStaminaLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 300)
+       // addChild(duckStaminaLabel)
 
                 turnLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 150)
         
@@ -107,7 +109,7 @@ class Level3Scene: SKScene {
         
         staminaBar = SKShapeNode(rectOf: healthBarSize)
         staminaBar.fillColor = .yellow
-        staminaBar.position = CGPoint(x: frame.midX, y: frame.maxY - 270)
+        staminaBar.position = CGPoint(x: frame.midX, y: frame.midY - 270)
         addChild(staminaBar)
         }
     
@@ -160,9 +162,28 @@ class Level3Scene: SKScene {
         
         
     }
+    
+    func showResultPopup(result: String) {
+        // Create pop-up node
+        let popupNode = SKSpriteNode(color: UIColor.white, size: CGSize(width: 300, height: 200))
+        popupNode.position = CGPoint(x: frame.midX, y: frame.midY)
+        
+        let resultLabel = SKLabelNode(text: result)
+        resultLabel.fontName = "Verdana-Bold"
+        resultLabel.fontSize = 24
+        resultLabel.fontColor = .black
+        resultLabel.position = CGPoint(x: popupNode.frame.midX, y: popupNode.frame.midY)
+        popupNode.addChild(resultLabel)
+        
+        addChild(popupNode)
+    }
+
    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard gameIsActive else {
+                    return // If the game is over, return without processing touches
+                }
             for touch in touches {
                 let location = touch.location(in: self)
                 let touchedNode = self.atPoint(location)
@@ -231,11 +252,19 @@ class Level3Scene: SKScene {
                 hpLabel.text = "Enemy HP: \(enemyHp)"
         duckhealthlabel.position = CGPoint(x: frame.midX, y: frame.maxY - 400)
         duckhealthlabel.text = "duckHP: \(duckHealth)"
-        duckStaminaLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 450)
+        duckStaminaLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 300)
         duckStaminaLabel.text = "Duck Stamina: \(DuckStam)"
         if enemyHp <= 0 {
             badSprite.texture = SKTexture(imageNamed: "goosesketch")
         }
+        
+        if enemyHp <= 0 {
+                showResultPopup(result: "You Win!")
+            gameIsActive = false
+            } else if duckHealth <= 0 {
+                gameIsActive = false 
+                showResultPopup(result: "You Lose!")
+            }
         
     }
     

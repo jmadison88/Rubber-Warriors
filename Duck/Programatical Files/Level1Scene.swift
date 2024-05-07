@@ -83,7 +83,7 @@ class Level1Scene: SKScene {
         duckStaminaLabel.text = "Duck Stamina: \(DuckStam)"
         duckStaminaLabel.fontSize = 24
         duckStaminaLabel.fontColor = .black
-        duckStaminaLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 450)
+        duckStaminaLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 300)
         addChild(duckStaminaLabel)
 
                 turnLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 150)
@@ -107,7 +107,7 @@ class Level1Scene: SKScene {
         
         staminaBar = SKShapeNode(rectOf: healthBarSize)
         staminaBar.fillColor = .yellow
-        staminaBar.position = CGPoint(x: frame.midX, y: frame.maxY - 270)
+        staminaBar.position = CGPoint(x: frame.midX, y: frame.midY - 270)
         addChild(staminaBar)
         }
     
@@ -231,7 +231,7 @@ class Level1Scene: SKScene {
                 hpLabel.text = "Enemy HP: \(enemyHp)"
         duckhealthlabel.position = CGPoint(x: frame.midX, y: frame.maxY - 400)
         duckhealthlabel.text = "duckHP: \(duckHealth)"
-        duckStaminaLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 450)
+        duckStaminaLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 300)
         duckStaminaLabel.text = "Duck Stamina: \(DuckStam)"
         if enemyHp <= 0 {
             badSprite.texture = SKTexture(imageNamed: "goosesketch")
