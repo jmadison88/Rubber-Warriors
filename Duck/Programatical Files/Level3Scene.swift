@@ -16,6 +16,7 @@ class Level3Scene: SKScene {
     var hpLabel = SKLabelNode(fontNamed: "Verdana-Bold")
     var duckhealthlabel = SKLabelNode(fontNamed: "Verdana-Bold")
     var duckStaminaLabel = SKLabelNode(fontNamed: "Verdana-Bold")
+    var turnLabel = SKLabelNode(fontNamed: "Verdana-Bold")
     var playerTurn = "Goose"
     var enemyHp = 100
     var DuckStam = 100
@@ -28,9 +29,11 @@ class Level3Scene: SKScene {
     
     var gameIsActive = true
     
+    var backButtonCreated = false
+    
     
     static var selectedDuck: SKSpriteNode?
-        
+    
     var gooseDisplay: SKLabelNode!
     
     override func didMove(to view: SKView) {
@@ -42,12 +45,12 @@ class Level3Scene: SKScene {
         createDodgeButton()
         heavyAttackButton()
         createHealthBars()
-
-
+        
+        
     }
     
     func createBackground() {
-        let river = SKTexture(imageNamed: "duckgamebackgroundbattle")
+        let river = SKTexture(imageNamed: "duckgamebackground")
         for i in 0...1 {
             let riverBackground = SKSpriteNode(texture: river)
             riverBackground.zPosition = -3
@@ -56,72 +59,71 @@ class Level3Scene: SKScene {
         }
     }
     
-        // Add your scene elements here
+    // Add your scene elements here
     func createLabel(){
-        let turnLabel = SKLabelNode(fontNamed: "Verdana-Bold")
-                turnLabel.text = "Turn: \(playerTurn)"
-                turnLabel.fontSize = 24
-                turnLabel.fontColor = .black
-                turnLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 300)
-                addChild(turnLabel)
-
-                // Remove redeclaration of hpLabel
-                hpLabel.text = "Enemy HP: \(enemyHp)"
-                hpLabel.fontSize = 24
-                hpLabel.fontColor = .black
-                hpLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 350)
-           //     addChild(hpLabel)
+        turnLabel.text = "Turn: \(playerTurn)"
+        turnLabel.fontSize = 24
+        turnLabel.fontColor = .black
+        turnLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 300)
+        addChild(turnLabel)
         
-
+        // Remove redeclaration of hpLabel
+        hpLabel.text = "Enemy HP: \(enemyHp)"
+        hpLabel.fontSize = 24
+        hpLabel.fontColor = .black
+        hpLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 350)
+        //     addChild(hpLabel)
+        
+        
         
         duckhealthlabel.text = "Health HP: \(duckHealth)"
         duckhealthlabel.fontSize = 24
         duckhealthlabel.fontColor = .black
         duckhealthlabel.position = CGPoint(x: frame.midX, y: frame.maxY - 400)
-     //   addChild(duckhealthlabel)
-
-                turnLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 250)
+        //   addChild(duckhealthlabel)
+        
+        turnLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 250)
         
         duckStaminaLabel.text = "Duck Stamina: \(DuckStam)"
         duckStaminaLabel.fontSize = 24
         duckStaminaLabel.fontColor = .black
         duckStaminaLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 300)
-       // addChild(duckStaminaLabel)
-
-                turnLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 150)
+        // addChild(duckStaminaLabel)
+        
+        turnLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 150)
         
     }
     func createHealthBars() {
-            // Create health bars for duck and enemy duck
-            let healthBarSize = CGSize(width: 200, height: 20)
-            
-            duckHealthBar = SKShapeNode(rectOf: healthBarSize)
-            duckHealthBar.fillColor = .green
-            duckHealthBar.position = CGPoint(x: frame.midX, y: frame.midY - 300)
-            addChild(duckHealthBar)
+        // Create health bars for duck and enemy duck
+        let healthBarSize = CGSize(width: 200, height: 20)
+        
+        duckHealthBar = SKShapeNode(rectOf: healthBarSize)
+        duckHealthBar.fillColor = .green
+        duckHealthBar.position = CGPoint(x: frame.midX, y: frame.midY - 300)
+        addChild(duckHealthBar)
         
         
-            
-            enemyHealthBar = SKShapeNode(rectOf: healthBarSize)
-            enemyHealthBar.fillColor = .red
-            enemyHealthBar.position = CGPoint(x: frame.midX, y: frame.maxY - 450)
-            addChild(enemyHealthBar)
+        
+        enemyHealthBar = SKShapeNode(rectOf: healthBarSize)
+        enemyHealthBar.fillColor = .red
+        enemyHealthBar.position = CGPoint(x: frame.midX, y: frame.maxY - 450)
+        addChild(enemyHealthBar)
         
         staminaBar = SKShapeNode(rectOf: healthBarSize)
         staminaBar.fillColor = .yellow
         staminaBar.position = CGPoint(x: frame.midX, y: frame.midY - 270)
         addChild(staminaBar)
-        }
+    }
     
     func createGoose(){
-                if enemyHp > 0 {
-                    badSprite = SKSpriteNode(imageNamed: "rgbgoose")
-                } else {
-                    badSprite = SKSpriteNode(imageNamed: "goosesketch")
-                }
-                badSprite.size = CGSize(width: 200, height: 200)
-                badSprite.position = CGPoint(x: frame.midX, y: frame.midY + 100)
-                addChild(badSprite)
+        if enemyHp > 0 {
+            badSprite = SKSpriteNode(imageNamed: "rgbgoose")
+        } else {
+            badSprite = SKSpriteNode(imageNamed: "goosesketch")
+        }
+        badSprite.size = CGSize(width: 200, height: 200)
+        badSprite.position = CGPoint(x: frame.midX, y: frame.midY + 100)
+        addChild(badSprite)
     }
     
     func createDuck() {
@@ -134,24 +136,24 @@ class Level3Scene: SKScene {
     
     
     func createSubtractButton() {
-            // Create subtract button
+        // Create subtract button
         let SubtractButton = SKTexture(imageNamed: "LightAttackButton")
         subtractButton = SKSpriteNode(texture: SubtractButton, size: CGSize(width: 250, height: 250))
         subtractButton.position = CGPoint(x: frame.midX - 125, y: frame.midY - 400)
-            subtractButton.name = "subtractButton"
-            subtractButton.zPosition = 1
-            addChild(subtractButton)
-        }
+        subtractButton.name = "subtractButton"
+        subtractButton.zPosition = 1
+        addChild(subtractButton)
+    }
     
     func heavyAttackButton() {
-            // Create subtract button
+        // Create subtract button
         let HeavyButton = SKTexture(imageNamed: "HeavyAttackButton")
         heavyButton = SKSpriteNode(texture: HeavyButton, size: CGSize(width: 250, height: 250))
         heavyButton.position = CGPoint(x: frame.midX - 125, y: frame.midY - 535)
-            heavyButton.name = "heavyButton"
-            heavyButton.zPosition = 1
-            addChild(heavyButton)
-        }
+        heavyButton.name = "heavyButton"
+        heavyButton.zPosition = 1
+        addChild(heavyButton)
+    }
     
     func createDodgeButton() {
         let DodgeButton = SKTexture(imageNamed: "DodgeButton")
@@ -177,38 +179,54 @@ class Level3Scene: SKScene {
         
         addChild(popupNode)
     }
-
-   
+    
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard gameIsActive else {
-                    return // If the game is over, return without processing touches
+            return // If the game is over, return without processing touches
+        }
+        for touch in touches {
+            let location = touch.location(in: self)
+            let touchedNode = self.atPoint(location)
+            
+            if touchedNode.name == "subtractButton" {
+                if DuckStam >= 10 {
+                    subtractHP()
                 }
-            for touch in touches {
-                let location = touch.location(in: self)
-                let touchedNode = self.atPoint(location)
-                
-                if touchedNode.name == "subtractButton" {
-                    if DuckStam >= 10 {
-                        subtractHP()
-                    }
-                    gooseAttack()
-                    duckhealthlabel.text = "Health HP: \(duckHealth)"
+                subtractButton.isUserInteractionEnabled = true
+                let attackUp1 = SKAction.moveTo(y: frame.midY + 100, duration: 0.1)
+                let attackBack1 = SKAction.moveTo(y: frame.midY - 100, duration: 0.1)
+                let attackSequence1 = SKAction.sequence([attackUp1, attackBack1])
+                goodSprite.run(attackSequence1)
+                subtractButton.alpha = 0.5
+                subtractButton.isUserInteractionEnabled = false
+                gooseAttack()
+                duckhealthlabel.text = "Health HP: \(duckHealth)"
+            }
+            if touchedNode.name == "heavyButton" {
+                if DuckStam >= 15 {
+                    subtractHPHeavy()
                 }
-                if touchedNode.name == "heavyButton" {
-                    if DuckStam >= 15 {
-                        subtractHPHeavy()
-                    }
-                    gooseAttack()
-                    duckhealthlabel.text = "Health HP: \(duckHealth)"
-                }
-                if touchedNode.name == "dodgeButton" {
-                    gooseDodgeAttack()
-                    gooseAttack()
-                    duckhealthlabel.text = "Health HP: \(duckHealth)"
-                }
+                let backUp = SKAction.moveTo(y: frame.midY - 200, duration: 1)
+                let attackUp = SKAction.moveTo(y: frame.midY + 100, duration: 0.1)
+                let attackBack = SKAction.moveTo(y: frame.midY - 100, duration: 0.1)
+                let attackSequence = SKAction.sequence([backUp, attackUp, attackBack])
+                goodSprite.run(attackSequence)
+                gooseAttack()
+                duckhealthlabel.text = "Health HP: \(duckHealth)"
+            }
+            if touchedNode.name == "dodgeButton" {
+                let dodgeRight = SKAction.moveTo(x: frame.midX + 50, duration: 0.1)
+                let dodgeBack = SKAction.moveTo(x: frame.midX, duration: 0.1)
+                let dodgeSequence = SKAction.sequence([dodgeRight, dodgeBack])
+                goodSprite.run(dodgeSequence)
+                gooseDodgeAttack()
+                gooseAttack()
+                duckhealthlabel.text = "Health HP: \(duckHealth)"
             }
         }
+    }
     func gooseAttack() {
         let damage = CGFloat(arc4random_uniform(5) + 5)
         duckHealth -= Int(damage)
@@ -226,30 +244,37 @@ class Level3Scene: SKScene {
         duckStaminaLabel.text = "Duck Stamina: \(DuckStam)"
         let damage = CGFloat(arc4random_uniform(10) + 5)
         enemyHp -= Int(damage)
-            hpLabel.text = "Enemy HP: \(enemyHp)"
-        }
+        hpLabel.text = "Enemy HP: \(enemyHp)"
+    }
     func subtractHPHeavy() {
         DuckStam -= 15
         duckStaminaLabel.text = "Duck Stamina: \(DuckStam)"
         let damage = CGFloat(arc4random_uniform(15) + 5)
         enemyHp -= Int(damage)
-            hpLabel.text = "Enemy HP: \(enemyHp)"
-        }
+        hpLabel.text = "Enemy HP: \(enemyHp)"
+    }
     
     override func update(_ currentTime: TimeInterval) {
         let duckHealthPercentage = CGFloat(duckHealth) / 100.0
-                duckHealthBar.xScale = duckHealthPercentage
-                
-                let enemyHealthPercentage = CGFloat(enemyHp) / 100.0
-                enemyHealthBar.xScale = enemyHealthPercentage
+        let scaleForward = SKAction.scale(to: 3, duration: 0.3)
+        let scaleBackward2 = SKAction.scale(to: 2, duration: 0.2)
+        let scaleSequence = SKAction.sequence([scaleForward, scaleBackward2])
+        let moveRight = SKAction.moveTo(x: 900, duration: 0.5)
+        let moveLeft = SKAction.moveTo(x: -900, duration: 0.5)
+        let moveUp = SKAction.moveTo(y: frame.midY - 50, duration: 0.5)
+        let moveDown = SKAction.moveTo(y: frame.midY - 75, duration: 0.5)
+        duckHealthBar.xScale = duckHealthPercentage
+        
+        let enemyHealthPercentage = CGFloat(enemyHp) / 100.0
+        enemyHealthBar.xScale = enemyHealthPercentage
         
         let staminaPercentage = CGFloat(DuckStam) / 100.0
         staminaBar.xScale = staminaPercentage
-                
+        
         
         hpLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 350)
-                // Update HP label text
-                hpLabel.text = "Enemy HP: \(enemyHp)"
+        // Update HP label text
+        hpLabel.text = "Enemy HP: \(enemyHp)"
         duckhealthlabel.position = CGPoint(x: frame.midX, y: frame.maxY - 400)
         duckhealthlabel.text = "duckHP: \(duckHealth)"
         duckStaminaLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 300)
@@ -257,14 +282,52 @@ class Level3Scene: SKScene {
         if enemyHp <= 0 {
             badSprite.texture = SKTexture(imageNamed: "goosesketch")
         }
-        
-        if enemyHp <= 0 {
-                showResultPopup(result: "You Win!")
+
+
+        if enemyHp <= 0 && !backButtonCreated {
+            // Create textures for the button
+            let normalTexture = SKTexture(imageNamed: "backButton")
+            let selectedTexture = SKTexture(imageNamed: "backButtonSelected")
+            
+            // Remove other nodes from the scene
+            turnLabel.removeFromParent()
+            badSprite.removeFromParent()
+            badSprite.run(scaleSequence)
+            goodSprite.run(moveUp)
+            subtractButton.run(moveLeft)
+            heavyButton.run(moveLeft)
+            dodgeButton.run(moveRight)
+            enemyHealthBar.removeFromParent()
+            staminaBar.removeFromParent()
+            duckHealthBar.removeFromParent()
             gameIsActive = false
-            } else if duckHealth <= 0 {
-                gameIsActive = false 
-                showResultPopup(result: "You Lose!")
-            }
+            
+            // Create a custom back button
+            let customBackButton = CustomBackButton(defaultTexture: normalTexture, selectedTexture: selectedTexture, size: CGSize(width: 250, height: 250))
+            customBackButton.position = CGPoint(x: frame.midX, y: frame.midY - 1000)
+            addChild(customBackButton)
+            
+            // Move the button into position
+            let moveUp1 = SKAction.moveTo(y: frame.midY - 500, duration: 0.5)
+            customBackButton.run(moveUp1)
+            
+            backButtonCreated = true // Set the flag to true
+        } else if duckHealth <= 0 {
+            gameIsActive = false
+        }
+        
+        if duckHealth <= 0 {
+            goodSprite.removeFromParent()
+            turnLabel.removeFromParent()
+            badSprite.run(scaleSequence)
+            badSprite.run(moveDown)
+            subtractButton.run(moveLeft)
+            heavyButton.run(moveLeft)
+            dodgeButton.run(moveRight)
+            enemyHealthBar.removeFromParent()
+            staminaBar.removeFromParent()
+            duckHealthBar.removeFromParent()
+        }
         
     }
     
