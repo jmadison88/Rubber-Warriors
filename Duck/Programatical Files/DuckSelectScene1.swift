@@ -18,6 +18,9 @@ class DuckSelectScene1: SKScene {
         createLabels()
         let backgroundSound = SKAudioNode(fileNamed: "QuackCharacterSelect")
         self.addChild(backgroundSound)
+        
+        currentIndex = 0
+            updateDisplayedDuck()
     }
     
     func createBackground() {
