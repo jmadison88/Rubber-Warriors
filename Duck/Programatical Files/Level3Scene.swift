@@ -10,6 +10,7 @@ import SpriteKit
 class Level3Scene: SKScene {
     
     // State variables
+    
     var subtractButton: SKSpriteNode!
     var heavyButton: SKSpriteNode!
     var dodgeButton: SKSpriteNode!
@@ -26,6 +27,8 @@ class Level3Scene: SKScene {
     var enemyHealthBar: SKShapeNode!
     var staminaBar: SKShapeNode!
     var goodSprite = SKSpriteNode(imageNamed: "")
+    
+    
     
     var gameIsActive = true
     
@@ -312,6 +315,9 @@ class Level3Scene: SKScene {
 
 
         if enemyHp <= 0 && !backButtonCreated {
+            
+            LevelSelectScene.level3Complete = true
+            
             // Create textures for the button
             let normalTexture = SKTexture(imageNamed: "backButton")
             let selectedTexture = SKTexture(imageNamed: "backButtonSelected")
@@ -354,6 +360,21 @@ class Level3Scene: SKScene {
             enemyHealthBar.removeFromParent()
             staminaBar.removeFromParent()
             duckHealthBar.removeFromParent()
+            backButtonCreated = true
+            
+            let normalTexture = SKTexture(imageNamed: "backButton")
+            let selectedTexture = SKTexture(imageNamed: "backButtonSelected")
+            
+            let customBackButton = CustomBackButton(defaultTexture: normalTexture, selectedTexture: selectedTexture, size: CGSize(width: 250, height: 250))
+            customBackButton.position = CGPoint(x: frame.midX, y: frame.midY - 1000)
+            addChild(customBackButton)
+            
+            // Move the button into position
+            let moveUp1 = SKAction.moveTo(y: frame.midY - 500, duration: 0.5)
+            customBackButton.run(moveUp1)
+            backButtonCreated = true
+            
+            
         }
         
     }

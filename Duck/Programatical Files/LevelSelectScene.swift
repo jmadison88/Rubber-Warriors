@@ -17,6 +17,12 @@ class LevelSelectScene: SKScene {
     var selectionArrowLeft: SKSpriteNode!
     var selectionArrowRight: SKSpriteNode!
     
+    var level1Complete = false
+    var level2Complete = false
+   public static var level3Complete = false
+    
+    public static var gameIsActive = true
+    
     override func didMove(to view: SKView) {
         createBackground()
         createButtons()
@@ -68,6 +74,18 @@ class LevelSelectScene: SKScene {
         addChild(selectButton3)
         let moveUp3 = SKAction.moveTo(y: frame.midY + 425, duration: 0.5)
         selectButton3.run(moveUp3)
+        
+        if LevelSelectScene.level3Complete == true {
+            let Lock3 = SKTexture(imageNamed: "redX")
+            let lock3sprite = SKSpriteNode(texture: Lock3)
+            lock3sprite.position = CGPoint(x: frame.midX - 52, y: frame.midY - 900)
+            lock3sprite.size  = CGSize(width: 100, height: 100)
+            lock3sprite.run(moveUp3)
+
+
+            addChild(lock3sprite)
+            
+        }
         
         
         let normalTexture1 = SKTexture(imageNamed: "ActualBackButton")
