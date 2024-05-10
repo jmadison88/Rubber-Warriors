@@ -17,8 +17,8 @@ class Level1Scene: SKScene {
     var duckStaminaLabel = SKLabelNode(fontNamed: "Verdana-Bold")
     var playerTurn = "Goose"
     var enemyHp = 100
-    var DuckStam = 100
-    var duckHealth = 100
+    var DuckStam = 152
+    var duckHealth = 152
     var badSprite = SKSpriteNode(imageNamed: "")
     var duckHealthBar: SKShapeNode!
     var enemyHealthBar: SKShapeNode!
@@ -32,7 +32,46 @@ class Level1Scene: SKScene {
     var gooseDisplay: SKLabelNode!
     
     override func didMove(to view: SKView) {
-        
+            if(TitleScene.Duck == "Fire"){
+                duckHealth = 200
+                DuckStam = 104
+            }else if (TitleScene.Duck == "Water"){
+                duckHealth = 192
+                DuckStam = 112
+            }else if (TitleScene.Duck == "Earth"){
+                duckHealth = 184
+                DuckStam = 120
+            }else if (TitleScene.Duck == "Healing"){
+                duckHealth = 176
+                DuckStam = 128
+            }else if (TitleScene.Duck == "Ice"){
+                duckHealth = 168
+                DuckStam = 136
+            }else if (TitleScene.Duck == "Cheetah"){
+                duckHealth = 160
+                DuckStam = 144
+            }else if (TitleScene.Duck == "Studious"){
+                duckHealth = 152
+                DuckStam = 152
+            }else if (TitleScene.Duck == "Soccer"){
+                duckHealth = 144
+                DuckStam = 160
+            }else if (TitleScene.Duck == "Special"){
+                duckHealth = 136
+                DuckStam = 168
+            }else if (TitleScene.Duck == "HighSpawnChance"){
+                duckHealth = 128
+                DuckStam = 176
+            }else if (TitleScene.Duck == "Superhero"){
+                duckHealth = 120
+                DuckStam = 184
+            }else if (TitleScene.Duck == "Biker"){
+                duckHealth = 112
+                DuckStam = 192
+            }else{
+                duckHealth = 104
+                DuckStam = 200
+            }
         createBackground()
         createLabel()
         createGoose()
