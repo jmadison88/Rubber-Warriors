@@ -11,13 +11,25 @@ class DuckSelectScene3: SKScene {
     
     var currentIndex = 0
     var duckSprites: [SKSpriteNode] = []
+    //ducks
     var ogDuck: SKSpriteNode!
     var fireDuck: SKSpriteNode!
+    var waterDuck: SKSpriteNode!
     var earthDuck: SKSpriteNode!
+    var healingDuck: SKSpriteNode!
+    var iceDuck: SKSpriteNode!
+    var cheetahDuck: SKSpriteNode!
+    var studiousDuck: SKSpriteNode!
+    var soccerDuck: SKSpriteNode!
+    var specialDuck: SKSpriteNode!
+    var hscDuck: SKSpriteNode!
+    var superDuck: SKSpriteNode!
+    var bikerDuck: SKSpriteNode!
+    
     var selectionArrowLeft: SKSpriteNode!
     var selectionArrowRight: SKSpriteNode!
     var currentSelectedDuck = ""
-    var BasicDuckArray = ["Original", "Fire", "Earth"]
+    var BasicDuckArray = ["Original", "Fire", "Water", "Earth", "Healing", "Ice", "Cheetah", "Studious", "Soccer", "Special", "HigherSpawnChance", "Superhero", "Biker"]
 
     override func didMove(to view: SKView) {
         createBackground()
@@ -54,9 +66,19 @@ class DuckSelectScene3: SKScene {
         
         ogDuck = createDuck(texture: SKTexture(imageNamed: "Original"), position: CGPoint(x: frame.midX, y: frame.midY))
         fireDuck = createDuck(texture: SKTexture(imageNamed: "Fire"), position: CGPoint(x: frame.midX, y: frame.midY))
+        waterDuck = createDuck(texture: SKTexture(imageNamed: "Water"), position: CGPoint(x: frame.midX, y: frame.midY))
         earthDuck = createDuck(texture: SKTexture(imageNamed: "Earth"), position: CGPoint(x: frame.midX, y: frame.midY))
+        healingDuck = createDuck(texture: SKTexture(imageNamed: "Healing"), position: CGPoint(x: frame.midX, y: frame.midY))
+        iceDuck = createDuck(texture: SKTexture(imageNamed: "Ice"), position: CGPoint(x: frame.midX, y: frame.midY))
+        cheetahDuck = createDuck(texture: SKTexture(imageNamed: "Cheetah"), position: CGPoint(x: frame.midX, y: frame.midY))
+        studiousDuck = createDuck(texture: SKTexture(imageNamed: "Studious"), position: CGPoint(x: frame.midX, y: frame.midY))
+        soccerDuck = createDuck(texture: SKTexture(imageNamed: "Soccer"), position: CGPoint(x: frame.midX, y: frame.midY))
+        specialDuck = createDuck(texture: SKTexture(imageNamed: "Special"), position: CGPoint(x: frame.midX, y: frame.midY))
+        hscDuck = createDuck(texture: SKTexture(imageNamed: "HigherSpawnChance"), position: CGPoint(x: frame.midX, y: frame.midY))
+        superDuck = createDuck(texture: SKTexture(imageNamed: "Superhero"), position: CGPoint(x: frame.midX, y: frame.midY))
+        bikerDuck = createDuck(texture: SKTexture(imageNamed: "Biker"), position: CGPoint(x: frame.midX, y: frame.midY))
         
-        duckSprites = [ogDuck, fireDuck, earthDuck]
+        duckSprites = [ogDuck, fireDuck, waterDuck, earthDuck, healingDuck, iceDuck, cheetahDuck, studiousDuck, soccerDuck, specialDuck, hscDuck, superDuck, bikerDuck]
     }
     
     func createDuck(texture: SKTexture, position: CGPoint) -> SKSpriteNode {
