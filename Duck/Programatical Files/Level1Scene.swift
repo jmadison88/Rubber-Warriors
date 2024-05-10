@@ -32,6 +32,7 @@ class Level1Scene: SKScene {
     var gooseDisplay: SKLabelNode!
     
     override func didMove(to view: SKView) {
+        
         createBackground()
         createLabel()
         createGoose()
