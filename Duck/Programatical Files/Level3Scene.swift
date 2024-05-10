@@ -194,13 +194,15 @@ class Level3Scene: SKScene {
                 if DuckStam >= 10 {
                     subtractHP()
                 }
-                subtractButton.isUserInteractionEnabled = true
+                let gooseSurprised = SKAction.moveTo(y: frame.midY + 150, duration: 0.1)
+                let gooseSurprised2 = SKAction.moveTo(y: frame.midY + 100, duration: 0.1)
                 let attackUp1 = SKAction.moveTo(y: frame.midY + 100, duration: 0.1)
                 let attackBack1 = SKAction.moveTo(y: frame.midY - 100, duration: 0.1)
                 let attackSequence1 = SKAction.sequence([attackUp1, attackBack1])
+                let gooseSequence = SKAction.sequence([gooseSurprised, gooseSurprised2])
                 goodSprite.run(attackSequence1)
-                subtractButton.alpha = 0.5
-                subtractButton.isUserInteractionEnabled = false
+                badSprite.run(gooseSequence)
+                ifgooseSurprised()
                 gooseAttack()
                 duckhealthlabel.text = "Health HP: \(duckHealth)"
             }
@@ -209,10 +211,14 @@ class Level3Scene: SKScene {
                     subtractHPHeavy()
                 }
                 let backUp = SKAction.moveTo(y: frame.midY - 200, duration: 1)
-                let attackUp = SKAction.moveTo(y: frame.midY + 100, duration: 0.1)
-                let attackBack = SKAction.moveTo(y: frame.midY - 100, duration: 0.1)
-                let attackSequence = SKAction.sequence([backUp, attackUp, attackBack])
-                goodSprite.run(attackSequence)
+                let attackUp2 = SKAction.moveTo(y: frame.midY + 100, duration: 0.1)
+                let attackBack2 = SKAction.moveTo(y: frame.midY - 100, duration: 0.1)
+                let gooseSurprised12 = SKAction.moveTo(y: frame.midY + 150, duration: 0.1)
+                let gooseSurprised1 = SKAction.moveTo(y: frame.midY + 100, duration: 0.1)
+                let attackSequence2 = SKAction.sequence([backUp, attackUp2, attackBack2])
+                let gooseSequence1 = SKAction.sequence([gooseSurprised12, gooseSurprised1])
+                goodSprite.run(attackSequence2)
+                ifgooseSurprised2()
                 gooseAttack()
                 duckhealthlabel.text = "Health HP: \(duckHealth)"
             }
@@ -254,6 +260,27 @@ class Level3Scene: SKScene {
         hpLabel.text = "Enemy HP: \(enemyHp)"
     }
     
+    func ifgooseSurprised() {
+        let changeToNewTexture = SKAction.setTexture(SKTexture(imageNamed: "surprisedrgbgoose"))
+        let waitDuration = 0.5 // Change this to the desired wait time in seconds
+        let waitAction = SKAction.wait(forDuration: waitDuration)
+        let changeBackToOriginalTexture = SKAction.setTexture(SKTexture(imageNamed: "rgbgoose"))
+        let sequence = SKAction.sequence([changeToNewTexture, waitAction, changeBackToOriginalTexture])
+                badSprite.run(sequence)
+    }
+    func ifgooseSurprised2() {
+        let changeToNewTexture2 = SKAction.setTexture(SKTexture(imageNamed: "surprisedrgbgoose"))
+        let waitDuration = 0.5
+        let waitDuration2 = 1.0 // Change this to the desired wait time in seconds
+        let waitAction = SKAction.wait(forDuration: waitDuration)
+        let waitAction2 = SKAction.wait(forDuration: waitDuration2)
+        let changeBackToOriginalTexture2 = SKAction.setTexture(SKTexture(imageNamed: "rgbgoose"))
+        let gooseSurprised = SKAction.moveTo(y: frame.midY + 150, duration: 0.1)
+        let gooseSurprised2 = SKAction.moveTo(y: frame.midY + 100, duration: 0.1)
+        let sequence2 = SKAction.sequence([waitAction2, gooseSurprised, changeToNewTexture2, waitAction, changeBackToOriginalTexture2, gooseSurprised2])
+        badSprite.run(sequence2)
+    }
+    
     override func update(_ currentTime: TimeInterval) {
         let duckHealthPercentage = CGFloat(duckHealth) / 100.0
         let scaleForward = SKAction.scale(to: 3, duration: 0.3)
@@ -292,7 +319,7 @@ class Level3Scene: SKScene {
             // Remove other nodes from the scene
             turnLabel.removeFromParent()
             badSprite.removeFromParent()
-            badSprite.run(scaleSequence)
+            goodSprite.run(scaleSequence)
             goodSprite.run(moveUp)
             subtractButton.run(moveLeft)
             heavyButton.run(moveLeft)
