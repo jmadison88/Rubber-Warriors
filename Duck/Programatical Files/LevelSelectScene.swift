@@ -17,8 +17,8 @@ class LevelSelectScene: SKScene {
     var selectionArrowLeft: SKSpriteNode!
     var selectionArrowRight: SKSpriteNode!
     
-    var level1Complete = false
-    var level2Complete = false
+   public static var level1Complete = false
+   public static var level2Complete = false
    public static var level3Complete = false
     
     public static var gameIsActive = true
