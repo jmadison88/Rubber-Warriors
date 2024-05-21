@@ -46,10 +46,10 @@ class DuckSelectScene1: SKScene {
     }
     
     func createLabels() {
-        let logo = SKTexture(imageNamed: "ChooseYourDucks")
+        let logo = SKTexture(imageNamed: "ChooseADuck")
         let chooseADuck = SKSpriteNode(texture: logo)
         chooseADuck.position = CGPoint(x: frame.midX, y: frame.maxY - 300)
-        chooseADuck.size = CGSize(width: 130, height: 130) // Increase size
+        chooseADuck.size = CGSize(width: 100, height: 100) // Increase size
         chooseADuck.zPosition = -2
         addChild(chooseADuck)
         let scaleBackward = SKAction.scale(to: 0.25, duration: 0.2)

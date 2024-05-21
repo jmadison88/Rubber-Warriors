@@ -27,6 +27,8 @@ class Level3Scene: SKScene {
     var enemyHealthBar: SKShapeNode!
     var staminaBar: SKShapeNode!
     var goodSprite = SKSpriteNode(imageNamed: "")
+    var victory = SKSpriteNode(imageNamed: "victory")
+    var defeat = SKSpriteNode(imageNamed: "defeat")
     
     
     
@@ -373,6 +375,13 @@ class Level3Scene: SKScene {
             enemyHealthBar.removeFromParent()
             staminaBar.removeFromParent()
             duckHealthBar.removeFromParent()
+            let scaleForward = SKAction.scale(to: 3, duration: 0.3)
+            let scaleBackward2 = SKAction.scale(to: 2, duration: 0.2)
+            let scaleSequence = SKAction.sequence([scaleForward, scaleBackward2])
+            victory.size = CGSize(width: 300, height: 300)
+            victory.position = CGPoint(x: frame.midX, y: frame.midY + 300)
+            addChild(victory)
+            victory.run(scaleSequence)
             gameIsActive = false
             
             // Create a custom back button
@@ -389,7 +398,7 @@ class Level3Scene: SKScene {
             gameIsActive = false
         }
         
-        if duckHealth <= 0 {
+        if duckHealth <= 0 && !backButtonCreated {
             goodSprite.removeFromParent()
             turnLabel.removeFromParent()
             badSprite.run(scaleSequence)
@@ -400,6 +409,13 @@ class Level3Scene: SKScene {
             enemyHealthBar.removeFromParent()
             staminaBar.removeFromParent()
             duckHealthBar.removeFromParent()
+            let scaleForward = SKAction.scale(to: 3, duration: 0.3)
+            let scaleBackward2 = SKAction.scale(to: 2, duration: 0.2)
+            let scaleSequence = SKAction.sequence([scaleForward, scaleBackward2])
+            defeat.size = CGSize(width: 300, height: 300)
+            defeat.position = CGPoint(x: frame.midX, y: frame.midY + 300)
+            addChild(defeat)
+            defeat.run(scaleSequence)
             backButtonCreated = true
             
             let normalTexture = SKTexture(imageNamed: "backButton")
